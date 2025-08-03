@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <title>Login & Signup</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h2>Joint Project</h2>
-    <h1> Demo1</h1>
-    <h3>poposterhtrs</h3>
-    
-    
+
+<div class="wrapper">
+  <div class="form-box">
+    <div class="button-box">
+      <button id="loginBtn" class="toggle-btn active">Login</button>
+      <button id="signupBtn" class="toggle-btn">Sign Up</button>
+    </div>
+
+    <div class="form-container" id="formContainer">
+      <!-- Login Form -->
+      <form class="form login-form">
+        <h2>Welcome Back</h2>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Signup Form -->
+      <form class="form signup-form">
+        <h2>Create Account</h2>
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const loginBtn = document.getElementById('loginBtn');
+  const signupBtn = document.getElementById('signupBtn');
+  const formContainer = document.getElementById('formContainer');
+
+  loginBtn.addEventListener('click', () => {
+    formContainer.style.transform = 'translateX(0%)';
+    loginBtn.classList.add('active');
+    signupBtn.classList.remove('active');
+  });
+
+  signupBtn.addEventListener('click', () => {
+    formContainer.style.transform = 'translateX(-100%)';
+    signupBtn.classList.add('active');
+    loginBtn.classList.remove('active');
+  });
+</script>
+
 </body>
-</html> 
+</html>
